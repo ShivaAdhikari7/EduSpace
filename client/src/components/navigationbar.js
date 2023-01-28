@@ -6,9 +6,6 @@ import CategoryList from "./categorylist";
 import AuthContext from "../context/AuthContext";
 import LogOutBtn from "./logout";
 
-
-
-
 function Nav() {
   const [categ, setCategorie] = useState([]);
 
@@ -30,16 +27,19 @@ function Nav() {
   };
 
   const displayData = () => {
-    let uniquecateg = categ.filter((ele, ind) =>
-      ind === categ.findIndex(elem =>
-        elem.id === ele.id && elem.category === ele.category))
+    let uniquecateg = categ.filter(
+      (ele, ind) =>
+        ind ===
+        categ.findIndex(
+          (elem) => elem.id === ele.id && elem.category === ele.category
+        )
+    );
     return uniquecateg.map((data) => {
       return <CategoryList obj={data} key={data._id} />;
     });
   };
 
   return (
-
     <div className="navbar navbar-inverse">
       <div className="container navbarcont">
         <div className="navbar-header">
@@ -60,7 +60,6 @@ function Nav() {
           {loggedIn === false && (
             <>
               <ul className="nav navbar-nav mainNav">
-
                 <li className="active">
                   {" "}
                   <NavLink className="nav-link" to={"/"}>
@@ -69,9 +68,12 @@ function Nav() {
                   </NavLink>
                 </li>
 
-
                 <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="#"
+                    className="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Categories <b className="caret"></b>
                   </a>
                   <ul className="dropdown-menu">{displayData()}</ul>
@@ -91,7 +93,6 @@ function Nav() {
           {loggedIn === true && (
             <>
               <ul className="nav navbar-nav mainNav">
-
                 <li className="active">
                   {" "}
                   <NavLink className="nav-link" to={"/"}>
@@ -106,27 +107,33 @@ function Nav() {
                   </NavLink>
                 </li>
 
+                <li>
+                  <NavLink className="nav-link" to={"/myprofile"}>
+                    {" "}
+                    My Profile{" "}
+                  </NavLink>
+                </li>
+
                 <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="#"
+                    className="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Categories <b className="caret"></b>
                   </a>
                   <ul className="dropdown-menu">{displayData()}</ul>
                 </li>
               </ul>
               <ul className="nav navbar-nav pull-right mainNav">
-
                 <LogOutBtn />
-
-
               </ul>
             </>
           )}
         </div>
       </div>
     </div>
-
   );
 }
 
 export default Nav;
-
