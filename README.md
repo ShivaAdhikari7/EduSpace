@@ -1,6 +1,3 @@
-# E-Learning-Website-MERN-
-E-Learning Website similar to Udemy built using MERN stack
+# Gamified Educational Portal
 
-Check Master Branch for full code
-
-Video Preview: https://youtu.be/U4l2PP09Ruo
+Gamified Learning Portal Website built using MERN stack

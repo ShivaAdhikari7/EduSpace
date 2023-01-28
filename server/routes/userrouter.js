@@ -120,6 +120,7 @@ const userController = require("../controllers/usercontroller.js");
 
 // CRUD for users
 router.route("/").get(userController.findUsers).post(userController.createUser);
+router.route("/get/hello").get(userController.findUsers);
 router
   .route("/:id")
   .get(userController.findUser)
