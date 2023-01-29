@@ -1,0 +1,36 @@
+.points-container {
+  max-width: 80%;
+  margin: 0 auto;
+  height: 90vh;
+}
+.primary-heading {
+  margin-top: 30px;
+  font-size: 40px;
+  text-align: center;
+}
+.imgs {
+  height: 100px;
+}
+.points-award {
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+.award-container {
+  width: 100%;
+  margin: 30px auto;
+}
+.awards {
+  width: 60%;
+  margin: 30px auto;
+}
+.fifty {
+  font-size: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.get-badge {
+  padding-left: 45px;
+}
+.get-streak {
+  padding-left: 40px;
+}

@@ -1,11 +1,12 @@
 import "./style/details.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function CourseDetails() {
   const [course, setCourse] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -24,33 +25,25 @@ function CourseDetails() {
       });
   }, []);
 
-  const displayData = () => { 
-    return course.videos.map((data) => { 
+  const displayData = () => {
+    return course.videos.map((data) => {
       return (
         <tr>
           <td>{data.videotitle}</td>
-          
-          </tr>
-       
+        </tr>
       );
-      
-    })
-    
-    
-    ;
+    });
   };
-  const displayPreview=() =>{
+  const displayPreview = () => {
     return (
-
-    <td rowSpan={course.videos.length}>
-      <a className="a-video" href={`/courses/${course._id}/video`}>
-        {" "}
-        Preview
-      </a>
-    </td>
-    )
-  
-  }
+      <td rowSpan={course.videos.length}>
+        <a className="a-video" href={`/courses/${course._id}/video`}>
+          {" "}
+          Enroll In the course
+        </a>
+      </td>
+    );
+  };
 
   if (loading)
     return (
@@ -97,12 +90,9 @@ function CourseDetails() {
                 <th>Play Videos</th>
               </tr>
               <tr>
-              {displayData()}
-              <td>
-              {displayPreview()}
-              </td>
+                {displayData()}
+                <td>{displayPreview()}</td>
               </tr>
-              
             </table>
           </div>
         </div>
@@ -110,10 +100,19 @@ function CourseDetails() {
 
       <div className="buy-details">
         <img src={course.image} alt={course.title} className="image-details" />
-        <div className="price-details"> ${course.price}</div>
-        <div className="seats-details"> Seats left: {course.seats}</div>
-        <button className="buttonBuy">Buy Now</button>
-        <div className="moneyback">30-Day Money-Back Guarantee</div>
+        <div className="price-details"> {course.title}</div>
+        {/* <div className="seats-details"> Seats left: {course.seats}</div> */}
+        <button
+          onClick={() => {
+            navigate("/getpoints");
+          }}
+          className="buttonBuy"
+        >
+          Mark as complete
+        </button>
+        <div className="moneyback">
+          You will get 50 points on course completion
+        </div>
       </div>
     </div>
   );

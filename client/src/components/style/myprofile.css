@@ -1,4 +1,84 @@
+.container-profile {
+  height: 150vh;
+  max-width: 85%;
+  background-color: rgb(210, 239, 239);
+  margin: 0 auto;
+}
+.myprofileImage {
+  height: 250px;
+  padding: 30px 80px;
+}
 .myprofile {
-  background-color: aqua;
-  height: 100vh;
+  display: flex;
+}
+.myinfo {
+  display: flex;
+  flex-direction: column;
+}
+.tp {
+  padding-top: 40px;
+}
+.achievements {
+  font-size: 30px;
+  padding-left: 80px;
+}
+
+.points-image {
+  height: 30px;
+}
+.badge1 {
+  height: 50px;
+}
+.badge2 {
+  height: 50px;
+  margin-left: 10px;
+}
+.leaderboard {
+  font-size: 30px;
+  margin: 0 auto;
+}
+.heading-leaderboard {
+  margin-top: 50px;
+  text-align: center;
+}
+.heading-leaderboard p {
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#customers td {
+  font-size: 15px;
+  text-align: center;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+.avatar-img {
+  height: 50px;
 }
